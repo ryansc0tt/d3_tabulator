@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: d3_tabulator.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: d3_tabulator.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
 * @module d3_tabulator
 */
 
@@ -175,7 +203,7 @@ export default class d3_tabulator {
 		.append('a')
 			.on('click', (col_head) => {
 
-				// select <table> from <tr> 
+				// select &lt;table> from &lt;tr> 
 				let table = d3.select(header_row.node().parentNode.parentNode);
 
 				// perform sort
@@ -243,7 +271,7 @@ export default class d3_tabulator {
 				// ! Re-setting based on text in td for now.
 				col_cell.value = col_cell.text = t[0].innerText;
 				
-				// select <table> from <tr> 
+				// select &lt;table> from &lt;tr> 
 				let table = d3.select(data_rows.node().parentNode.parentNode);
 
 				// replace table
@@ -280,15 +308,15 @@ export default class d3_tabulator {
      * @param {string} view_name - The name of the new table view.
      * @param {string} data_filename - The data file on which to base the new table view.
      * @param {string} view_title - A title for the new table view.
-     * @param {Object.<string, string>=} view_cols - Object representing columns to be included in the
+     * @param {Object.&lt;string, string>=} view_cols - Object representing columns to be included in the
      * new table view as {'name': 'header'}.
      * If no value is passed, default columns based on the data file will be used.
-     * @param {Object.<string, number>=} round_cols - Object representing columns to round in the new
+     * @param {Object.&lt;string, number>=} round_cols - Object representing columns to round in the new
      * table view as {'name': precision}.
-     * @param {Object.<string, boolean>=} sort_cols - Object representing columns to be sortable in the
+     * @param {Object.&lt;string, boolean>=} sort_cols - Object representing columns to be sortable in the
      * new table view as {'name': true|false}.
      * By default, all columns will be sortable.
-     * @param {Object<string, boolean>=} filter_cols - Object representing columns to be filterable in
+     * @param {Object&lt;string, boolean>=} filter_cols - Object representing columns to be filterable in
      * the new table view as {'name': true|false}.
      * By default, columns are not filterable.
      */
@@ -514,7 +542,7 @@ export default class d3_tabulator {
 /**
  * A container for data loaded from filename.
  * @param {string} filename - String containing the name of the data file.
- * @param {Array.<*>} data - Array of table data.
+ * @param {Array.&lt;*>} data - Array of table data.
  * @protected
  */
 function table_data (filename, data) {
@@ -527,7 +555,7 @@ function table_data (filename, data) {
  * @param {string} viewname - String containing the name of the view.
  * @param {string} filename - String containing the name of the corresponding data file.
  * @param {string} title - The title of the view, as displayed in the table caption.
- * @param {Array.<Object>=} cols - Array of [view_col()]{@link d3_tabulator.view_col} objects representing columns in the table view.
+ * @param {Array.&lt;Object>=} cols - Array of [view_col()]{@link d3_tabulator.view_col} objects representing columns in the table view.
  * @protected
  */
 function table_view(viewname, filename, title, cols=[]) {
@@ -563,7 +591,7 @@ function view_col(name, head, is_numeric=null, round=null, sortable=true, filter
  * Assigns a property of objects with a given 'name,' given a collection of {obj.name: value} pairs.
  * @param {Object[]} objs - List containing the objects to update.
  * @param {string} property - The object property (key value) to update.
- * @param {Object<string, *>} list - The collection of {obj.name: value} pairs.
+ * @param {Object&lt;string, *>} list - The collection of {obj.name: value} pairs.
  * @protected
  */
 const assign_prop_by_name = (objs, property, list) => {
@@ -609,7 +637,7 @@ const filter_obj_by_val = (key, val) => {
 
 /**
  * Returns a simple filter for an object by obj[{key}] is in the given list.
- * @param {Array.<*>} list - The list of values to filter by.
+ * @param {Array.&lt;*>} list - The list of values to filter by.
  * @param {string} key - The key to filter by.
  * @return {function} The resulting filter function.
  * @protected
@@ -621,4 +649,26 @@ const filter_obj_by_list = (list, key) => {
 /* TODO FOR README:
 include a view vs table illustration
 A standalone ES6-native module based on D3.js. Useful for..."
-*/
+*/</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-d3_tabulator.html">d3_tabulator</a></li></ul><h3>Classes</h3><ul><li><a href="module-d3_tabulator.html">d3_tabulator</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon May 04 2020 00:18:50 GMT-0500 (Central Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
