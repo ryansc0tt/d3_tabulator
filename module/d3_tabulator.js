@@ -241,7 +241,8 @@ export default class d3_tabulator {
 
 				// ! TODO later: try to figure out again why the wrong data (last in data_rows) is bound here by the time onclick gets invoked.
 				// ! Re-setting based on text in td for now.
-				col_cell.value = col_cell.text = t[0].innerText;
+	
+				col_cell.value = col_cell.text = t[i].innerText;
 				
 				// select <table> from <tr> 
 				let table = d3.select(data_rows.node().parentNode.parentNode);
