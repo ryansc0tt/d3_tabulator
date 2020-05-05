@@ -1,4 +1,4 @@
-import d3_tabulator from './module/d3_tabulator.js';
+import d3_tabulator from './module/min/d3_tabulator.min.js';
 
 // data file
 const filenames = ['data/Brooklyn_Dog_Licensing_Dataset_2018.csv'];
