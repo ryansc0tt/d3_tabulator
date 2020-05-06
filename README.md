@@ -4,6 +4,8 @@ A standalone ES6-native module based on [D3.js](https://www.d3js.org). Useful fo
 ### Features
 d3_tabulator is based on the concept of table views, which define how to represent a data file in tabular form.
 
+<img src="d3-tabulator-readme.png"/>
+
 Views currently support:
 - Displaying a title
 - Defining column headers
