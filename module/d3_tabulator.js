@@ -298,25 +298,38 @@ export default class d3_tabulator {
 
 		// TODO LATER: prob pass in view and round column objects as props instead
 
-		// defauls cols based on table data
+		// default cols based on table data
 		let default_cols = this._table_views.filter(
 			filter_obj_by_val('filename', data_filename))[0].cols;
 
+		// default view col names 
+		let default_col_names = default_cols.reduce((a, d) => {
+			a.push(d.name);
+			return a;
+		}, []);
+
+		// new view col names
+		let view_col_names = Object.keys(view_cols);
+
 		// init new view
-		let new_view = new table_view(view_name, data_filename, view_title); 
+		let new_view = new table_view(view_name, data_filename, view_title);
+			
+		// assign col headers for table using defaults as baseline
+		if (view_col_names.length > 0) {
 
-		if (Object.keys(view_cols).length > 0) {
+			view_col_names.forEach((col_name) => {
+				if (default_col_names.includes(col_name)) {
 
-			// assign col headers for table using defaults as baseline
-			default_cols.forEach((col) => {
-				if (Object.keys(view_cols).includes(col.name)) {
+					let default_col = default_cols.filter(
+						filter_obj_by_val('name', col_name));
+					
 					new_view.cols.push(
-						new view_col(col.name, view_cols[col.name], col.is_numeric,
-							view_col.round, view_col.sortable, view_col.filterable)
+						new view_col(col_name, view_cols[col_name], default_col.is_numeric,
+							default_col.round, default_col.sortable, default_col.filterable)
 					);
 				}
 			});
-
+			
 		}
 		else {
 
