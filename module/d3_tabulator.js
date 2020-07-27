@@ -224,7 +224,11 @@ export default class d3_tabulator {
 			});
 
 			// append td on enter
-			let trow_enter = trow_data.enter().append('td');
+			let trow_enter = trow_data.enter()
+			.append('td')
+			.attr('title', (col_cell) => {
+				return col_cell.col_name;
+			});
 
 			// set text
 			trow_enter.text((col_cell) => {
@@ -329,7 +333,7 @@ export default class d3_tabulator {
 					);
 				}
 			});
-			
+
 		}
 		else {
 
@@ -631,8 +635,3 @@ const filter_obj_by_val = (key, val) => {
 const filter_obj_by_list = (list, key) => {
 	return (obj) => { if (list.includes(obj[key])) return obj; }
 }
-
-/* TODO FOR README:
-include a view vs table illustration
-A standalone ES6-native module based on D3.js. Useful for..."
-*/
